@@ -1,6 +1,6 @@
 package de.farzu.main;
 
-import de.farzu.ui.UiController;
+import de.farzu.settings.UiController;
 
 public class Main {
     public static void main(String[] args) {

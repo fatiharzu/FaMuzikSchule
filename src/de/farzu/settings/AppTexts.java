@@ -11,10 +11,11 @@ public class AppTexts {
             __________________________
             """;
     public static final String TXT_SHOW_LIST = "\n( "+AppCommands.USER_CMD_SHOW+" ) Registered List";
-    public static final String TXT_CREATE_STD = "\n( "+AppCommands.USER_CMD_CREATE+" ) Create A Student";
-    public static final String TXT_EDIT_INFO = "\n( "+AppCommands.USER_CMD_EDIT+" ) Edit Information";
-    public static final String TXT_DELETE_INFO = "\n( "+AppCommands.USER_CMD_DELETE+" ) Delete Registration";
-    public static final String FINISH_PORGRAM = "\n( "+AppCommands.USER_CMD_EXIT+" ) Ending the program";
+    public static final String TXT_CREATE_STD = "( "+AppCommands.USER_CMD_CREATE+" ) Create A Student";
+    public static final String TXT_EDIT_INFO = "( "+AppCommands.USER_CMD_EDIT+" ) Edit Information";
+    public static final String TXT_DELETE_INFO = "( "+AppCommands.USER_CMD_DELETE+" ) Delete Registration";
+    public static final String FINISH_PORGRAM = "( "+AppCommands.USER_CMD_EXIT+" ) Ending the program\n";
+    public static final String INVALID_SELECTION = "\nIncorrect selection. Please select again.\n";
     //    region Konstanten
     //    endregion
 
