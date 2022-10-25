@@ -1,7 +1,9 @@
 package de.farzu.ui;
 
+import de.farzu.settings.AppTexts;
+
 public class UiController {
-//    region Konstanten
+//    regionKonstanten
 //    endregion
 
 //    region Attribute
@@ -13,17 +15,25 @@ public class UiController {
 //    regionMethoden
     public void startUi(){
         printApplicationName();
-        System.out.println("""
-                 __________________________
-                  ======
-                  |    | Note Musik Schule
-                 o'   o'
-                 __________________________
-                 """);
+        handleUserInteraction();
+    }
+
+    private void handleUserInteraction() {
+        do {
+            printMainMenu();
+        }while ();
+    }
+
+    private void printMainMenu() {
+        System.out.println(AppTexts.TXT_SHOW_LIST);
+        System.out.println(AppTexts.TXT_CREATE_STD);
+        System.out.println(AppTexts.TXT_EDIT_INFO);
+        System.out.println(AppTexts.TXT_DELETE_INFO);
+        System.out.println(AppTexts.FINISH_PORGRAM);
     }
 
     private void printApplicationName(){
-
+        System.out.println(AppTexts.TXT_APP_NAME);
     }
 //    endregion
 
