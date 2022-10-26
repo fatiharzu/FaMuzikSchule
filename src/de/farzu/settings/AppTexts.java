@@ -43,8 +43,8 @@ public class AppTexts {
     public static final String MSG_INPUT_GROUP = "Choose one of the instruments; Guitar, Violin, Saxophone, Drum";
     public static final String MSG_INPUT_SURNAME = "Please enter Surname";
     public static final String MSG_INPUT_NAME = "Please enter name";
-    public static final String FORMAT_STRING_APP_LIST_HEADER = "\n%5s %5s %15s %15s %15s %15s %15s %20s\n";
-    public static final String FORMAT_STRING_APP_LIST = "%5d %5s %15s %15s %15s %15s %15s %20s\n";
+    public static final String FORMAT_STRING_APP_LIST_HEADER = "\n%5s %15s %15s %15s %15s %15s %20s\n";
+    public static final String FORMAT_STRING_APP_LIST = "%5s %15s %15s %15s %15s %15s %20s\n";
     public static final String MSG_NOTE_REGISTRAION_COMPLETED = "Registration is completed";
     public static final String MSG_SELECT_STD_EDIT = "Please select a Student to edit.";
     public static final String MSG_STD_INFO_EDITED = "Student information has been successfully edited.";

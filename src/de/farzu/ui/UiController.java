@@ -17,7 +17,7 @@ public class UiController {
     //    endregion
 
     //    region Attribute
-    private final List<Student> students = new ArrayList<>();
+    private final List<Student> students ;
 
     private final UiInputHandler inputHandler;
 
@@ -25,6 +25,8 @@ public class UiController {
 
     //    regionKonstruktor
     public UiController(){
+
+        students = FileHandler.getInstance().readStudentListFromCvsFile();
 
     inputHandler=new UiInputHandler();
     }
@@ -110,11 +112,11 @@ public class UiController {
 
     private void showRegist() {
         System.out.printf(AppTexts.FORMAT_STRING_APP_LIST_HEADER,
-                NUM, ID, NAME, SURNAME, GROUP,
+                ID, NAME, SURNAME, GROUP,
                 AGE, LEVEL, RENT_INSTRUMENT);
         for (int i = 0 ; i <students.size() ; i++){
             Student student = students.get(i);
-            System.out.printf(AppTexts.FORMAT_STRING_APP_LIST, i, student.getId(), student.getName(), student.getSurName(),
+            System.out.printf(AppTexts.FORMAT_STRING_APP_LIST,  student.getId(), student.getName(), student.getSurName(),
                     student.getGroup(), student.getAge(),  student.getLevel(), student.RentInstrument());
         }
     }
@@ -137,10 +139,21 @@ public class UiController {
     }
 
 //    private void sortById() {
-//        students.sort(firstId,secondId) -> {
-//            int firstIdList =firstId.id();
-//        }
+//        students.sort((firstId,secondId) -> {
+//
+//            int firstIdList =firstId.getId();
+//            int secondIdList = secondId.getId();
+//
+//            if(firstIdList<secondIdList){
+//
+//            }
+//            return-firstIdList;
+//        });
 //    }
+
+
+
+
 //    students.sort(new Comparator<Student>() {
 //        @Override
 //        public int compare(Student firstId, Student secondId) {
@@ -156,7 +169,8 @@ public class UiController {
 //            }
 //
 //        }
-//    });
+//    }
+//    );
     //    endregion
 
 }

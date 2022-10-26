@@ -8,20 +8,19 @@ public class Student {
     public static final int DEFAULT_INT_NUM_VALUE = 0;
     private static final boolean  DEFAULT_BOOLEAN_VALUE = false;
     public static final int DEFAULT_INT_VALUE =1001;
-    private static final int INDEX_NUM = 0;
-    public static final int INDEX_STD_ID = 1;
-    public static final int INDEX_STD_NAME = 2;
-    public static final int INDEX_STD_SURNAME = 3;
-    public static final int INDEX_CLASS_GROUP = 4;
-    public static final int INDEX_STD_AGE = 5;
-    public static final int INDEX_STD_LEVEL = 6;
+    public static final int INDEX_STD_ID = 0;
+    public static final int INDEX_STD_NAME = 1;
+    public static final int INDEX_STD_SURNAME = 2;
+    public static final int INDEX_CLASS_GROUP = 3;
+    public static final int INDEX_STD_AGE = 4;
+    public static final int INDEX_STD_LEVEL = 5;
 
-    private static final int INDEX_STD_RENTINSTRUMENT = 7;
+    private static final int INDEX_STD_RENTINSTRUMENT = 6;
 
 //    endregion
 
 //    region Attribute
-    private int num;
+
     private int id;
     private String name;
     private String surName;
@@ -34,7 +33,7 @@ public class Student {
 
 //    regionKonstruktor
     public Student(){
-        num=DEFAULT_INT_VALUE;
+
         id = DEFAULT_INT_VALUE;
         name = DEFAULT_STRING_VALUE;
         surName = DEFAULT_STRING_VALUE;
@@ -51,8 +50,7 @@ public class Student {
         this.group=group;
     }
 
-    public Student(int num,int id, String name, String surName, String group, int age, String level, boolean rentInstrument) {
-        this.num=num;
+    public Student(int id, String name, String surName, String group, int age, String level, boolean rentInstrument) {
         this.id =id;
         this.name = name;
         this.surName = surName;
@@ -67,14 +65,16 @@ public class Student {
     }
 
     public String getAttributesAsCvsLine() {
-        return num + FileHandler.DELIMITER + id + FileHandler.DELIMITER+name+FileHandler.DELIMITER+surName+
-                FileHandler.DELIMITER+group+FileHandler.DELIMITER+age+FileHandler.DELIMITER+level+
-                FileHandler.DELIMITER+rentInstrument+"\n";
+        return  id + FileHandler.DELIMITER+
+                name + FileHandler.DELIMITER+
+                surName + FileHandler.DELIMITER+
+                group + FileHandler.DELIMITER+
+                age + FileHandler.DELIMITER+
+                level + FileHandler.DELIMITER+
+                rentInstrument+"\n";
     }
     private void setAttributesFromCsvLine(String cvsLine) {
         String[] allAttributes = cvsLine.split(FileHandler.DELIMITER);
-
-        num = Integer.parseInt(allAttributes[INDEX_NUM]);
         id = Integer.parseInt(allAttributes[INDEX_STD_ID]);
         name = allAttributes[INDEX_STD_NAME];
         surName = allAttributes[INDEX_STD_SURNAME];
@@ -90,12 +90,7 @@ public class Student {
 
 //    regionMethoden
 
-    public int getNum(){
-        return num;
-    }
-    public void setNum(int num) {
-        this.num = num;
-    }
+
     public int getId() {
         return id;
     }
@@ -155,7 +150,6 @@ public class Student {
     @Override
     public String toString() {
         return "Student{" +
-                "num='" + num + '\'' +
                 "id='" + id + '\'' +
                 ", name='" + name + '\'' +
                 ", surName='" + surName + '\'' +

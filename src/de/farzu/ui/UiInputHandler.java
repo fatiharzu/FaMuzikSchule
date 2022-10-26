@@ -17,7 +17,7 @@ public class UiInputHandler {
 
 //    regionMethoden
     public Student getListFromeConsole(){
-        int num = getVAlidNum();
+
         int id = getValidID();
         String name = getValidName();
         String surName = getValidSurname();
@@ -29,7 +29,7 @@ public class UiInputHandler {
         
         
         
-        return new Student(num,id, name, surName, group, age, level, rentInstrument);
+        return new Student(id, name, surName, group, age, level, rentInstrument);
     }
 
 
@@ -148,24 +148,7 @@ public class UiInputHandler {
         }
         return id;
     }
-    private int getVAlidNum() {
-        int num = Student.DEFAULT_INT_NUM_VALUE;
 
-        boolean isValid = false;
-
-        while (!isValid) {
-            System.out.println(AppTexts.MSG_INPUT_ID);
-            num = ConsoleReader.in.readInt();
-
-            if (num >= ContentSettings.MIN_LENGTH_ID && num <= ContentSettings.MAX_LENGTH_ID){
-                isValid = true;
-            }else {
-                System.out.printf(AppTexts.MSG_INVALID_ID,ContentSettings.MIN_LENGTH_ID,ContentSettings.MAX_LENGTH_ID);
-            }
-
-        }
-        return num;
-    }
 //    endregion
 
 }
