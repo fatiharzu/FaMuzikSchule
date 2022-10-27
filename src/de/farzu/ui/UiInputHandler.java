@@ -59,7 +59,7 @@ public class UiInputHandler {
         boolean isValid = false;
 
         while (!isValid) {
-            System.out.println(AppTexts.MSG_INPUT_AGE);
+            System.out.printf(AppTexts.MSG_INPUT_AGE,ContentSettings.MIN_LENGTH_AGE_CONTENT,ContentSettings.MAX_LENGTH_AGE_CONTENT);
             age = ConsoleReader.in.readPositivInt();
 
             if (age >= ContentSettings.MIN_LENGTH_AGE_CONTENT && age <= ContentSettings.MAX_LENGTH_AGE_CONTENT){

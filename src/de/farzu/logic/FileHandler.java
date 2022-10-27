@@ -11,7 +11,7 @@ public class FileHandler {
     //    region Konstanten
     public static final String CVS_FILE_PATH = "src/de/farzu/resources/list.csv";
 
-    public static final String DELIMITER = "\t";
+    public static final String DELIMITER = "\t;\t";
 //    endregion
 
     //    region Attribute

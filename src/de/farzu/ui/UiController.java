@@ -6,8 +6,6 @@ import de.farzu.settings.AppCommands;
 import de.farzu.settings.AppTexts;
 import de.rhistel.logic.ConsoleReader;
 
-import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
 
 import static de.farzu.settings.AppTexts.*;
@@ -44,25 +42,13 @@ public class UiController {
             printMainMenu();
             int selectMenu = ConsoleReader.in.readPositivInt();
 
-            switch (selectMenu){
-
-                case  AppCommands.USER_CMD_SHOW:
-                    showRegist();
-                    break;
-                case AppCommands.USER_CMD_CREATE:
-                    createStd();
-                    break;
-                case AppCommands.USER_CMD_EDIT:
-                    editStd();
-                    break;
-                case AppCommands.USER_CMD_DELETE:
-                    deleteStd();
-                    break;
-                case AppCommands.USER_CMD_EXIT:
-                    exitApp =true;
-                    break;
-                default:
-                    System.err.println(INVALID_SELECTION);
+            switch (selectMenu) {
+                case AppCommands.USER_CMD_SHOW -> showRegist();
+                case AppCommands.USER_CMD_CREATE -> createStd();
+                case AppCommands.USER_CMD_EDIT -> editStd();
+                case AppCommands.USER_CMD_DELETE -> deleteStd();
+                case AppCommands.USER_CMD_EXIT -> exitApp = true;
+                default -> System.err.println(INVALID_SELECTION);
             }
         }while (!exitApp);
     }
@@ -73,8 +59,8 @@ public class UiController {
 
         int indexToDelete = ConsoleReader.in.readPositivInt();
 
-        if (indexToDelete < students.size()){
-            students.remove(indexToDelete);
+        if (indexToDelete < students.size()+1000){
+            students.remove((indexToDelete-999));
             sortAndSaveListInCsvFile();
             System.out.println(MSG_DELETE_DONE);
         }else {
@@ -90,7 +76,7 @@ public class UiController {
 
         if (indexToEdit<students.size()){
             Student student = inputHandler.getListFromeConsole();
-            students.set(indexToEdit,student);
+            students.set((indexToEdit),student);
 
             sortAndSaveListInCsvFile();
             System.out.println(MSG_STD_INFO_EDITED);
@@ -106,17 +92,20 @@ public class UiController {
 
         sortAndSaveListInCsvFile();
 
-        System.out.println(MSG_NOTE_REGISTRAION_COMPLETED);
+
+        System.out.println(MSG_NOTE_REGISTRATION_COMPLETED);
     }
 
 
+
+
     private void showRegist() {
-        System.out.printf(AppTexts.FORMAT_STRING_APP_LIST_HEADER,
+        System.out.printf(AppTexts.FORMAT_STRING_APP_LIST_HEADER, APP_INDEX,
                 ID, NAME, SURNAME, GROUP,
                 AGE, LEVEL, RENT_INSTRUMENT);
         for (int i = 0 ; i <students.size() ; i++){
             Student student = students.get(i);
-            System.out.printf(AppTexts.FORMAT_STRING_APP_LIST,  student.getId(), student.getName(), student.getSurName(),
+            System.out.printf(AppTexts.FORMAT_STRING_APP_LIST, i, student.getId(), student.getName(), student.getSurName(),
                     student.getGroup(), student.getAge(),  student.getLevel(), student.RentInstrument());
         }
     }
@@ -138,39 +127,8 @@ public class UiController {
         FileHandler.getInstance().saveStdToCvsFile(students);
     }
 
-//    private void sortById() {
-//        students.sort((firstId,secondId) -> {
-//
-//            int firstIdList =firstId.getId();
-//            int secondIdList = secondId.getId();
-//
-//            if(firstIdList<secondIdList){
-//
-//            }
-//            return-firstIdList;
-//        });
-//    }
 
 
-
-
-//    students.sort(new Comparator<Student>() {
-//        @Override
-//        public int compare(Student firstId, Student secondId) {
-//
-//            //Sortieren nach Wichtigkeit absteigend (true > false)
-//            Integer firstIdcomp = firstId.getId();
-//            Boolean secondIdComp = secondId.getId();
-//
-//            int idCompare = firstIdcomp.compareTo(secondIdComp);
-//
-//            if (idCompare != 0) {
-//                return -idCompare;
-//            }
-//
-//        }
-//    }
-//    );
     //    endregion
 
 }
