@@ -1,5 +1,8 @@
 package de.farzu.settings;
-
+/**
+ * Diese Klasse stellt Nutzerauswahlmöglichkeiten als öffentliche Konstanten
+ * zur Verfügung. Von dieser Klasse kann kein Objekt erzeugt werden.
+ */
 public class AppCommands {
 //    region Konstanten
     public static final int USER_CMD_SHOW = 1;
@@ -15,6 +18,12 @@ public class AppCommands {
 //    endregion
 
 //    regionKonstruktor
+    /**
+     * Privater Konstruktor um Objekterzeugung von außen zu verhindern.
+     */
+    private AppCommands(){
+
+    }
 //    endregion
 
 //    regionMethoden

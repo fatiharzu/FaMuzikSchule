@@ -1,20 +1,24 @@
 package de.farzu.settings;
-
+/**
+        * Diese Klasse stellt alle Programmtexte als öffentliche Konstanten zur Verfügung.
+        * Von dieser Klasse kann kein Objekt erzeugt werden.
+        */
 public class AppTexts {
 
     //    region Konstanten
     public static final String TXT_APP_NAME = """
-            __________________________
+                         
              ======
              |    | Note Musik Schule
             o'   o'
-            __________________________
             """;
-    public static final String TXT_SHOW_LIST = "\n( "+AppCommands.USER_CMD_SHOW+" ) Registrierte Liste";
+    public static final String TXT_SHOW_LIST = "( "+AppCommands.USER_CMD_SHOW+" ) Registrierte Liste";
     public static final String TXT_CREATE_STD = "( "+AppCommands.USER_CMD_CREATE+" ) Erstellen Sie einen Schüler";
     public static final String TXT_EDIT_INFO = "( "+AppCommands.USER_CMD_EDIT+" ) Informationen bearbeiten";
     public static final String TXT_DELETE_INFO = "( "+AppCommands.USER_CMD_DELETE+" ) Registrierung löschen";
-    public static final String FINISH_PORGRAM = "( "+AppCommands.USER_CMD_EXIT+" ) Programm beendet\n";
+    public static final String FINISH_PORGRAM = "( "+AppCommands.USER_CMD_EXIT+" ) Programm beenden";
+    public static final String TXT_GET_STD = "( "+AppCommands.USER_CMD_GET+" ) Holen Sie sich Schüler mit Index";
+    public static final String TXT_SORT_GROUP = "( "+AppCommands.USER_CMD_SORT+" ) Sortieren Sie mit der Muzik-Gruppe";
     public static final String INVALID_SELECTION = "\nFalsche Auswahl. Bitte erneut auswählen.\n";
     public static final String APP_INDEX ="INDEX";
 
@@ -34,7 +38,7 @@ public class AppTexts {
     public static final String MSG_INVALID_AGE = "\nUngültiger Age. Der Schüler muss zwischen %d und %d Jahre alt sein.";
     public static final String MSG_INVALID_LEVEL= "\nUngültiges Level. Das Level muss zwischen %d und %d Zeichen haben.";
     public static final String MSG_INPUT_LEVEL = "Bitte Stufe eingeben; Anfänger, Grundstufe, Mittelstufe";
-    public static final String MSG_INPUT_AGE = "Das Alter der Schüler muss zwischen %d und %d Jahren liegen";
+    public static final String MSG_INPUT_AGE = "Das Alter der Schüler muss zwischen %d und %d Jahren liegen\n";
     public static final String MSG_INPUT_GROUP = "Wählen Sie eines der Instrumente; Gitarre, Violine, Saxophon, Schlagzeug";
     public static final String MSG_INPUT_SURNAME = "Bitte geben Sie den Nachnamen ein";
     public static final String MSG_INPUT_NAME = "Bitte geben Sie den Namen ein";
@@ -45,12 +49,12 @@ public class AppTexts {
     public static final String MSG_STD_INFO_EDITED = "Die Schülerinformationen wurden erfolgreich bearbeitet.";
     public static final String MSG_INVALID_SELECT = "Ungültige Auswahl";
     public static final String MSG_SELECT_DELETE_STD_INFO = "Wählen Sie die Schülerinformationen aus, die Sie löschen möchten!";
-    public static final String MSG_DELETE_DONE = "Sie haben die angeforderten Studenteninformationen gelöscht!";
+    public static final String MSG_DELETE_DONE = "Sie haben die angeforderten Schüler informationen gelöscht!";
     public static final String MSG_SORT_STD_COPMLETED = "\nDie Schüler sind nach ihren Musikgruppen aufgelistet.";
     public static final String MSG_GET_STD = "\nGeben Sie den Index des Schülers ein, den Sie mitbringen möchten";
-    public static final String TXT_GET_STD = "( "+AppCommands.USER_CMD_GET+" ) Holen Sie sich Student mit ID";
-    public static final String TXT_SORT_GROUP = "( "+AppCommands.USER_CMD_SORT+" ) Sortieren Sie mit der Muzik-Gruppe";
     public static final String MSG_STD_INFOS = "\nAngaben zum gewünschten Schüler: ";
+    public static final String TXT_SHORT_LINE = "-----------------------------------------";
+    public static final String TXT_LONG_LINE = "----------------------------------------------------------------------------------------------------------";
     //    region Konstanten
     //    endregion
 
@@ -58,6 +62,10 @@ public class AppTexts {
     //    endregion
 
     //    regionKonstruktor
+    /**
+     * Privater Konstruktor um Objekterzeugung von außen zu verhindern.
+     */
+    private AppTexts() {}
     //    endregion
 
     //    regionMethoden

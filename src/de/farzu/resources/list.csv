@@ -1,2 +1,10 @@
-1001	;	ayse	;	arzu	;	Gitarre	;	35	;	Grundstufe	;	false
-1003	;	fatih	;	arzu	;	Gitarre	;	35	;	anfager	;	false
+1001		;		Fatih		;		Arzu		;		Gitarre		;		33		;		Anfanger		;		false
+1002		;		Tuna		;		Bulut		;		Violine		;		25		;		Grundstufe		;		false
+1003		;		Nesibe		;		Pelit		;		Schlagzeug		;		32		;		Grundstufe		;		false
+1004		;		Cemile		;		Yanmaz		;		Saxaphone		;		16		;		Anfanger		;		true
+1005		;		Ersan		;		Turk		;		Gitarre		;		16		;		Grundstufe		;		false
+1006		;		Fatma		;		Tok		;		Schlagzeug		;		34		;		Mittelstufe		;		false
+1007		;		Leyla		;		Saglam		;		Gitarre		;		15		;		Anfanger		;		false
+1008		;		Taner		;		Kus		;		Violine		;		14		;		Grundstufe		;		false
+1009		;		Recep		;		Ivedik		;		Schlagzeug		;		13		;		Anfanger		;		true
+1010		;		Cemil		;		Canan		;		Schlagzeug		;		15		;		Mittelstufe		;		false

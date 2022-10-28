@@ -11,7 +11,7 @@ public class FileHandler {
     //    region Konstanten
     public static final String CVS_FILE_PATH = "src/de/farzu/resources/list.csv";
 
-    public static final String DELIMITER = "\t;\t";
+    public static final String DELIMITER = "\t\t;\t\t";
 //    endregion
 
     //    region Attribute
@@ -20,19 +20,28 @@ public class FileHandler {
 
     //    regionKonstruktor
     private FileHandler() {
-        System.out.println("File handler created");
     }
 //    endregion
 
     //    regionMethoden
+    /**
+     * Instanziiert beim ersten Aufruf ein Objekt der Klasse.
+     * Danach wird dieses Objekt nur noch zurückgeliefert.
+     *
+     * @return {@link FileHandler} : EINZIGE Instanz der Klasse
+     */
     public static synchronized FileHandler getInstance() {
 
         if (instance == null) {
             instance = new FileHandler();
         }
-        System.out.println("Filehandler returned");
         return instance;
     }
+    /**
+     * Speichert eine bestimmte Liste von Schülern als CSV-Strings in der CSV-Datei.
+     *
+     * @param stdsToSave : {@link List<Student>} : Liste mit zu speichernden Schülern
+     */
 
     public void saveStdToCvsFile(List<Student> stdsToSave) {
 
@@ -62,6 +71,13 @@ public class FileHandler {
             }
         }
     }
+    /**
+     * Liest die Datei Zeile für Zeile aus, generiert aus jeder Zeile ein Schüler-Objekt
+     * und fügt es einer Liste hinzu. Diese Liste wird zurückgegeben.
+     *
+     * @return {@link List<Student>} : Liste von Schülern
+     * TODO 0 Auslesen der Datei implementieren
+     */
 
     public List<Student> readStudentListFromCvsFile() {
         List<Student> students = new ArrayList<>();

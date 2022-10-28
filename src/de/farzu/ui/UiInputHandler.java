@@ -5,6 +5,12 @@ import de.farzu.settings.AppTexts;
 import de.farzu.settings.ContentSettings;
 import de.rhistel.logic.ConsoleReader;
 
+/**
+ *  * Dies ist eine unterstüzende Helferklasse für {@link UiController}.
+ *  * Sie liest die Eingaben des Benutzers ein und stellt ihre Gültigkeit sicher.
+ *  * Die gültigen Eingaben werden zurück an {@link UiController} geliefert.
+ *  * Vorgaben zur Gültigkeit befinden sich in der Klasse {@link de.farzu.settings.ContentSettings}
+ */
 public class UiInputHandler {
     //    region Konstanten
 //    endregion
@@ -16,6 +22,12 @@ public class UiInputHandler {
 //    endregion
 
 //    regionMethoden
+    /**
+     * Liest einen Schüler über die Konsole ein und liefert
+     * sie zurück.
+     *
+     * @return {@link Student} : Eingelesene Schüler
+     */
     public Student getListFromeConsole(){
 
         int id = getValidID();
@@ -32,7 +44,13 @@ public class UiInputHandler {
         return new Student(id, name, surName, group, age, level, rentInstrument);
     }
 
-
+    /**
+     * Liest den Inhalt der Schülerinformationen
+     * und prüft ihn auf Gültigkeit. Der Nutzer muss so lange ein alter eingeben,
+     * bis dieser gültig ist.
+     *
+     * @return {@link String} : Schülerniveau
+     */
 
     private String getValidLevel() {
         String level = Student.DEFAULT_STRING_VALUE;
@@ -52,7 +70,13 @@ public class UiInputHandler {
         }
         return level;
     }
-
+    /**
+     * Liest das Alter des Schülers über die Konsole ein
+     * und prüft ihn auf Gültigkeit. Der Nutzer muss so lange ein alter eingeben,
+     * bis dieser gültig ist.
+     *
+     * @return {@link String} : Alter des Schülers
+     */
     private static int getValidAge() {
         int age = Student.DEFAULT_INT_NUM_VALUE;
 
@@ -72,7 +96,13 @@ public class UiInputHandler {
         return age;
 
     }
-
+    /**
+     * Liest den Inhalt der Schülerinformationen
+     * und prüft ihn auf Gültigkeit. Der Nutzer muss so lange ein alter eingeben,
+     * bis dieser gültig ist.
+     *
+     * @return {@link String} : Schülergruppe
+     */
     private String getValidGroup() {
         String group = Student.DEFAULT_STRING_VALUE;
 
@@ -85,13 +115,19 @@ public class UiInputHandler {
             if (group.length() >= ContentSettings.MIN_LENGTH_LEVEL_CONTENT && group.length() <= ContentSettings.MAX_LENGTH_LEVEL_CONTENT){
                 isValid = true;
             }else {
-                System.out.printf(AppTexts.MSG_INVALID_GROUP,ContentSettings.MIN_LENGTH_LEVEL_CONTENT,ContentSettings.MAX_LENGTH_LEVEL_CONTENT);
+                System.out.printf(AppTexts.MSG_INVALID_GROUP,ContentSettings.MIN_LENGTH_LEVEL_CONTENT,ContentSettings.MAX_LENGTH_CONTENT);
             }
 
         }
         return group;
     }
-
+    /**
+     * Liest den Inhalt der Schülerinformationen
+     * und prüft ihn auf Gültigkeit. Der Nutzer muss so lange ein alter eingeben,
+     * bis dieser gültig ist.
+     *
+     * @return {@link String} : Schülernachname
+     */
     private String getValidSurname() {
         String surName = Student.DEFAULT_STRING_VALUE;
 
@@ -110,7 +146,13 @@ public class UiInputHandler {
         }
         return surName;
     }
-
+    /**
+     * Liest den Inhalt der Schülerinformationen
+     * und prüft ihn auf Gültigkeit. Der Nutzer muss so lange ein alter eingeben,
+     * bis dieser gültig ist.
+     *
+     * @return {@link String} : Schülername
+     */
     private String getValidName() {
         String name = Student.DEFAULT_STRING_VALUE;
 
@@ -129,7 +171,13 @@ public class UiInputHandler {
         }
         return name;
     }
-
+    /**
+     * Liest die ID des Schülers über die Konsole ein
+     * und prüft ihn auf Gültigkeit. Der Nutzer muss so lange eine ID eingeben,
+     * bis dieser gültig ist.
+     *
+     * @return {@link String} : Schülers ID
+     */
     private int getValidID() {
         int id = Student.DEFAULT_INT_NUM_VALUE;
 

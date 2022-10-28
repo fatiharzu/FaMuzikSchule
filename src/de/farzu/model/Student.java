@@ -2,6 +2,12 @@ package de.farzu.model;
 
 import de.farzu.logic.FileHandler;
 
+/**
+ *    Diese Klasse repräsentiert einen Schüler,
+ *    der an einer realen Musikschule eingeschrieben ist.
+ *    Enthält den Vornamen, den Nachnamen, das Alter, die Band und
+ *    eine Flag zum Ausleihen von Musikinstrumenten des Schülers
+ */
 public class Student {
 //    region Konstanten
     public static final String DEFAULT_STRING_VALUE = ">noValueSetYes<";
@@ -32,6 +38,11 @@ public class Student {
 //    endregion
 
 //    regionKonstruktor
+    /**
+     * Standardkonstruktor, welcher Eigenschaften mit eigenen
+     * Standardwerten initialisiert.
+     */
+
     public Student(){
 
         id = DEFAULT_INT_VALUE;
@@ -59,11 +70,25 @@ public class Student {
         this.level = level;
         this.rentInstrument = rentInstrument;
     }
+    /**
+     * Überladener Konstruktor, welcher ine CSV-Zeile entgegennimmt
+     * und über eine passende Methode alle Attribute initialisiert.
+     *
+     * @param cvsLine : {@link String} : Csv-Zeile mit Attributen
+     */
 
     public Student(String cvsLine){
         setAttributesFromCsvLine(cvsLine);
     }
+    //    endregion
 
+//    regionMethoden
+    /**
+     * Liefert ale Attribute als Csv-String zurück.
+     * D.h. ein String mit Attributwerten getrennt durch ein bestimmtes Trennzeichen
+     *
+     * @return {@link String} : Csv-Zeile
+     */
     public String getAttributesAsCvsLine() {
         return  id + FileHandler.DELIMITER+
                 name + FileHandler.DELIMITER+
@@ -73,6 +98,11 @@ public class Student {
                 level + FileHandler.DELIMITER+
                 rentInstrument+"\n";
     }
+    /**
+     * Befüllt alle Attribute mittels eines Csv-Strings
+     *
+     * @param cvsLine : {@link String} : Csv-String mit Attributwerten
+     */
     private void setAttributesFromCsvLine(String cvsLine) {
         String[] allAttributes = cvsLine.split(FileHandler.DELIMITER);
         id = Integer.parseInt(allAttributes[INDEX_STD_ID]);
@@ -83,13 +113,6 @@ public class Student {
         level = allAttributes[INDEX_STD_LEVEL];
         rentInstrument = Boolean.parseBoolean(allAttributes[INDEX_STD_RENTINSTRUMENT]);
     }
-
-
-
-    //    endregion
-
-//    regionMethoden
-
 
     public int getId() {
         return id;
