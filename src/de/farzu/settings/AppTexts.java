@@ -46,6 +46,11 @@ public class AppTexts {
     public static final String MSG_INVALID_SELECT = "Ungültige Auswahl";
     public static final String MSG_SELECT_DELETE_STD_INFO = "Wählen Sie die Schülerinformationen aus, die Sie löschen möchten!";
     public static final String MSG_DELETE_DONE = "Sie haben die angeforderten Studenteninformationen gelöscht!";
+    public static final String MSG_SORT_STD_COPMLETED = "\nDie Schüler sind nach ihren Musikgruppen aufgelistet.";
+    public static final String MSG_GET_STD = "\nGeben Sie den Index des Schülers ein, den Sie mitbringen möchten";
+    public static final String TXT_GET_STD = "( "+AppCommands.USER_CMD_GET+" ) Holen Sie sich Student mit ID";
+    public static final String TXT_SORT_GROUP = "( "+AppCommands.USER_CMD_SORT+" ) Sortieren Sie mit der Muzik-Gruppe";
+    public static final String MSG_STD_INFOS = "\nAngaben zum gewünschten Schüler: ";
     //    region Konstanten
     //    endregion
 

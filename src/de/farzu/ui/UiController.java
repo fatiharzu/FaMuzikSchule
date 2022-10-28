@@ -47,7 +47,10 @@ public class UiController {
                 case AppCommands.USER_CMD_CREATE -> createStd();
                 case AppCommands.USER_CMD_EDIT -> editStd();
                 case AppCommands.USER_CMD_DELETE -> deleteStd();
+                case AppCommands.USER_CMD_GET -> getStd();
+                case AppCommands.USER_CMD_SORT -> sortByGroup();
                 case AppCommands.USER_CMD_EXIT -> exitApp = true;
+
                 default -> System.err.println(INVALID_SELECTION);
             }
         }while (!exitApp);
@@ -115,6 +118,8 @@ public class UiController {
         System.out.println(TXT_CREATE_STD);
         System.out.println(TXT_EDIT_INFO);
         System.out.println(TXT_DELETE_INFO);
+        System.out.println(TXT_GET_STD);
+        System.out.println(TXT_SORT_GROUP);
         System.out.println(FINISH_PORGRAM);
     }
 
@@ -123,11 +128,46 @@ public class UiController {
     }
 
     private void sortAndSaveListInCsvFile() {
- //       sortById();
+        sortById();
         FileHandler.getInstance().saveStdToCvsFile(students);
     }
 
+    private void sortByGroup() {
+        students.sort((firstGroup, secondGroup) -> {
+            String firstGroupList = firstGroup.getGroup();
+            String secondGroupList = secondGroup.getGroup();
 
+            int campareGroup = firstGroupList.compareTo(secondGroupList);
+
+            System.out.println(MSG_SORT_STD_COPMLETED);
+            showRegist();
+            return campareGroup;
+        });
+    }
+
+    private void getStd() {
+        System.out.println(MSG_GET_STD);
+        showRegist();
+        int indexToGet = ConsoleReader.in.readPositivInt();
+        if (indexToGet<students.size()){
+            System.out.println(MSG_STD_INFOS);
+            System.out.println(students.get(indexToGet));
+        }else {
+            System.out.println(MSG_INVALID_SELECT);
+        }
+    }
+
+    public void sortById(){
+
+        students.sort((firstId, secondId) -> {
+            Integer  firstIdList = firstId.getId();
+            Integer secondIdList = secondId.getId();
+
+            int campareId = firstIdList.compareTo(secondIdList);
+
+            return campareId;
+        });
+    }
 
     //    endregion
 
